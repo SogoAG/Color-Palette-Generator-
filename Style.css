@@ -1,21 +1,164 @@
-body{
-    overflow: auto;
-}
-h3, h2{
-   text-shadow: 2px 2px 8px #000;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    margin: auto 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+i {
+    font-size: 2.0rem;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 5vh;
+    margin-bottom: 9vh;
+    color: #666;
+    font-weight: 400;
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 10vh;
+    padding: 5px 0;
+    text-shadow: 2px 2px 3px #000;
+    color: #fff;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 2px 2px 5px #000;
+    color: #fff;
+}
+
+.wrapper1,
+.wrapper2,
+.wrapper3,
+.wrapper4,
+.wrapper5,
+.wrapper6 {
+    flex: 1;
+    min-height: 30vh;
+    padding-top: 5vh;  
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 25px 0;
+}
+
+footer>.direction>button {
+    background-color: transparent;
+    border: 0;
+    padding: 0 2px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+footer>.direction>button>i {
+    font-size: 29px;
+    color: #666;
+}
+
+footer> .direction > button>i:hover{
+    transform: scale(1) translateY(-10px);
+}
+
+footer>.btn {
+    margin-top: 10px;
+    border: 0.2px solid #666;
+    align-items: center;
+    margin-right: 50px;
+}
+
+footer>.btn>button {
+    cursor: pointer;
+    color: #666;
+    background-color: transparent;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 20px 45px;
+    border: 0;
+}
+
+footer>.btn>button:hover{
+    background-color: #666;
+    color: #fff;
+}
+
+footer > .links{
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+footer > .links > a> i{
+    color: #666;
+   font-size: 29px;
+   padding: 0 5px;
+}
+
+footer > .links > a >i:hover{
+    color: #031718;
+    transform: scale(1) translateY(-10px);
+}
+
+
+
 /* Styling for clipboard */
+
 #tooltip {
+    margin-left: 45%;
     position: relative;
     display: inline-block;
-  }
-  
-  #tooltip .tooltiptext {
+    margin-top: 50%;
+    margin-bottom: 12%;
+}
+
+
+#tooltip>button {
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    display: inline-block;
+    align-items: center;
+    color: #031718;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#tooltip>button>i {
+    font-size: 25px;
+}
+
+#tooltip .tooltiptext {
     visibility: hidden;
     width: 140px;
-    background-color: #555;
+    background-color: transparent;
     color: #fff;
+    text-shadow: 2px 2px 7px #000;
     text-align: center;
     border-radius: 6px;
     padding: 5px;
@@ -26,9 +169,10 @@ h3, h2{
     margin-left: -75px;
     opacity: 0;
     transition: opacity 0.3s;
-  }
-  
-  #tooltip .tooltiptext::after {
+    cursor: pointer;
+}
+
+#tooltip .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -37,11 +181,173 @@ h3, h2{
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-  }
-  
-  #tooltip:hover .tooltiptext {
+}
+
+#tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-  }
+}
 
- 
+
+
+@media(max-width: 1024px) {
+
+    body {
+        margin: auto 0px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: 75vh;
+    }
+
+    h1 {
+        margin-top: 3vh;
+        margin-bottom: 6vh;
+        color: #666;
+        font-weight: 200;
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-top: 0vh;
+        padding: 5px 0;
+        text-shadow: 2px 2px 3px #000;
+        color: #fff;
+        margin-left: 2vh;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-shadow: 2px 2px 5px #000;
+        color: #fff;
+        margin-right: 3vh;
+    }
+
+    .wrapper1,
+    .wrapper2,
+    .wrapper3,
+    .wrapper4,
+    .wrapper5,
+    .wrapper6 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+        min-height: 0;
+        border-radius: 0;
+        padding-top: 0;
+        box-shadow: none;
+    }
+
+    .wrapper6 {
+        display: none;
+    }
+
+    #tooltip {
+        display: none;
+    }
+
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding: 0px 0;
+        margin-bottom: 10px;
+    }
+
+    footer> .direction > button>i:hover{
+        transform: none;
+    }
+   
+}
+@media(max-width: 700px) {
+
+    h1 {
+        margin-top: 3vh;
+        margin-bottom: 2vh;
+        color: #666;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 0vh;
+        padding: 5px 0;
+        text-shadow: 2px 2px 8px #000;
+        color: #fff;
+        margin-left: 2vh;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 400;
+        text-shadow: 2px 2px 5px #000;
+        color: #fff;
+        margin-right: 3vh;
+    }
+
+    footer>.direction>button {
+        background-color: transparent;
+        border: 0;
+        padding: 0 10px;
+        cursor: pointer;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+    footer>.direction>button>i {
+        font-size: 18px;
+    }
+
+    footer>.btn {
+        margin-top: 10px;
+        border: 0px solid #666;
+        align-items: center;
+        margin-right: 0px;
+    }
+    
+    footer>.btn>button {
+        cursor: pointer;
+        color: #555;
+        background-color: transparent;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 14px 14px;
+        border: 0;
+        font-style: italic;
+    }
+    
+    footer>.btn>button:hover{
+        background-color: transparent;
+        color: #555;
+    }
+    
+    footer > .links{
+        margin-top: 30px;
+        margin-right: 10px;
+    }
+    
+    footer > .links > a> i{
+        color: #666;
+       font-size: 18px;
+       padding: 0 2px;
+    }
+    
+    footer > .links > a >i:hover{
+        color: #666;
+        transform: none;
+    }
+}
+
+@media(max-width: 320px) {
+    h1{
+        font-size: 1.5rem;
+    }
+}
